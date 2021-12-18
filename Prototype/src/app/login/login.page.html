@@ -1,0 +1,20 @@
+<ion-content>
+
+
+  <div class="logo">
+    <ion-img src="assets/images/logo.jpg"></ion-img>
+  </div>
+  <div class="login">
+      <ion-item lines="full">
+        <ion-input type="text" required>Identifiant : </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" required>Mot de passe : </ion-input>
+      </ion-item>
+      <ion-item lines=none class="a">
+        <ion-button color="primary" fill="clear" slot="end" [routerLink]="['/mtd-oublie']">Mot de passe oublié?</ion-button>
+      </ion-item>
+      <ion-button color="success">CONNEXION </ion-button>
+  </div>
+
+</ion-content>
