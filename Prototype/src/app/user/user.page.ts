@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
-import { ToastController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-user',
@@ -10,30 +9,23 @@ import { AlertController } from '@ionic/angular';
 })
 export class UserPage implements OnInit {
 
-  constructor(public toastCtrl: ToastController,
-  private alertC: AlertController,
-    private load: LoadingController) { }
+  constructor(
+    public alertController: AlertController,
+    private toastCtrl: ToastController) { }
 
   ngOnInit() {
   }
-  
-  async calcul(value) {
-    const load = await this.load.create({
-      message: "Calcul en cours..."
-    });
-    load.present();
-  }
 
-  async alertV(){
-    await this.alertC.create({
-      header:"Alert",
-      message: "Demande Envoyer",
-      buttons:[
-      {
-        text:"Retour"
-      }
-      ]
-    }).then(res => res.present());
+  public async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+    console.log("alert");
+    return await alert.present();
   }
 }
 
