@@ -1,0 +1,26 @@
+
+h3{
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .logo{
+    padding: 30px;
+  }
+
+  ion-button{
+    display: block;
+  margin: 0 auto;
+  width: 100px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.conn{
+    display: flex;
+}
+
+ion-item{
+
+  --background: none;
+}

@@ -1,20 +1,30 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start"> 
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>SE CONNECTER</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-
-
   <div class="logo">
     <ion-img src="assets/images/logo.jpg"></ion-img>
   </div>
   <div class="login">
       <ion-item lines="full">
-        <ion-input type="text" required>Identifiant : </ion-input>
+        <ion-input type="text" required><b>Identifiant : </b></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="password" required>Mot de passe : </ion-input>
+        <ion-input type="password" required><b>Mot de passe : </b></ion-input>
       </ion-item>
-      <ion-item lines=none class="a">
-        <ion-button color="primary" fill="clear" slot="end" [routerLink]="['/mtd-oublie']">Mot de passe oublié?</ion-button>
+      <ion-item lines="none" >
+        <ion-button color="success" fill="clear" slot="end">Mot de passe oublié ?</ion-button>
       </ion-item>
-      <ion-button color="success">CONNEXION </ion-button>
+      <ion-button color="success" [routerLink]="['/user']">CONNEXION </ion-button>
+      <ion-button color="warning" [routerLink]="['/admin']">CONNEXION </ion-button>
+      <ion-item lines="none">
+        <ion-button color="warning" fill="clear" [routerLink]="['/register']">CREE UN NOUVEAU COMPTE</ion-button>
+      </ion-item>
   </div>
 
 </ion-content>

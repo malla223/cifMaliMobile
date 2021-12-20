@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start"> 
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>CREATION DE COMPTE</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="logo">
+    <ion-img src="assets/images/logo.jpg"></ion-img>
+  </div>
+  <div>
+    <ion-item>
+      <ion-input type="text" required><b>Nom : </b></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" required><b>Prenom : </b></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" required><b>E-mail : </b></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="email" required><b>Login : </b></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" required><b>Password : </b></ion-input>
+  </ion-item>
+
+    <ion-button type="submit" color="success">VALIDER</ion-button>
+
+    <ion-item lines="none" class="conn"> 
+      <ion-label>Vous avez deja un compte, </ion-label>
+      <ion-button color="warning" fill="clear" [routerLink]="['/login']">SE CONNECTER</ion-button>
+    </ion-item>
+  </div>
+</ion-content>

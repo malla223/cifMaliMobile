@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  navigate: any;  
+   constructor(   
+     private platform: Platform
+   ) {   
+     this.sideMenu();  
+   }  
+   sideMenu() {  
+     this.navigate =   
+     [  
+         { 
+         title : 'Accueil',
+         url   : '/home',
+         icon  : 'home' 
+         },
+         { 
+          title : 'Deconnexion',
+          url   : '/login',
+          icon  : 'close-circle' 
+          },
+     ];  
+    }
 }
