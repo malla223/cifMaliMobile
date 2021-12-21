@@ -13,8 +13,10 @@
     <div class="form">
       <ion-img src="assets/images/logo.jpg"></ion-img>
       <ion-item>
-        <ion-input type="file"></ion-input>
+        <ion-input type="file" (click)="createPdf()"></ion-input>
       </ion-item>
+      <ion-button color="success" >VALIDER</ion-button>
+      <ion-button color="dark" [routerLink]="['/user']">FAIRE UN CALCUL</ion-button>
     </div>
   </ion-content>
 </ion-app>
