@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { ToastController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-user',
@@ -10,23 +9,35 @@ import { ToastController } from '@ionic/angular';
 export class UserPage implements OnInit {
 
   constructor(
-    public alertController: AlertController,
-    private toastCtrl: ToastController) { }
+    public alertCtrl: AlertController,
+    private loading: LoadingController,
+    public alertController: AlertController) { }
 
   ngOnInit() {
   }
 
-  public async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['OK']
-    });
-    console.log("alert");
-    return await alert.present();
-  }
+ async presentConfirm() {
+  let alert = await this.alertCtrl.create({
+    header: 'Confirm purchase',
+    message: 'Do you want to buy this book?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Buy',
+        handler: () => {
+          console.log('Buy clicked');
+        }
+      }
+    ]
+  });
+  console.log(alert);
+  
+  alert.present();
 }
-
-
+}
